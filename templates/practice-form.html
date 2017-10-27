@@ -1,0 +1,12 @@
+{% block content %}
+  <h1>Album Search Form<img src = "static/spotifylogo.png"/></h1>
+  <form method="POST" action="http://localhost:5000/result">
+      {{ form.hidden_tag() }}
+      {% for message in get_flashed_messages() %}
+      {{ message }}
+      {% endfor %}
+      <p>{{ form.search.label }}{{ form.search() }}</p>
+      <p>{{ form.artist.label }}{{ form.artist() }}</p>
+      {{ form.submit() }}
+  </form>
+{% endblock %}
